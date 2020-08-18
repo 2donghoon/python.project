@@ -1,0 +1,76 @@
+print("당신은 부리부리제국의 왕자입니다.")
+print("당신은 구리구리제국의 공주와 3일 후 결혼을 하기로 예정되어있었습니다.")
+print("그러던 어느날")
+print("이를 질투한 동물 제국의 왕이 공주를 납치해가고 맙니다.")
+print("화가 난 당신은 동물 제국의 성에 들어가 공주를 구해오기로 결정합니다.")
+print("혼자서 말이죠.")
+print("아 그리고 들리는 바에 의하면 동물 제국은 총 10층탑으로 이루어져있으며 각 층마다 동물들이 그 층을 지키고 있다고 합니다.")
+print("부디 조심하시기 바랍니다.")
+
+class human:
+    HP = 100
+    MP = 100
+    def att(self,snail):
+        if self.MP == 100:
+            self.MP == 90
+            enemy.HP = 0
+            print("적을 쓰러뜨렸다!")
+
+    def meet(self,npc):
+        print("오! 상점을 발견했어요!")
+
+player = human()
+
+merchant = human()
+
+print("...")
+print("동물 제국의 성에 도착하였습니다.")
+print("이상하게도 경비가 한 명도 보이지 않는다.")
+print("당신은 의심을 품고 일단 안으로 들어가기로 결정합니다.")
+
+print("...")
+
+print("안을 조용히 둘러보던 중, 이상한 소리가 들립니다.")
+print("스멀스멀")
+print("1층을 지키는 달팽이가 나타났습니다!")
+print("어서 해치우세요!")
+
+class enemy:
+    str_condition = "unknown"
+    name = "name"
+
+class snail(enemy):
+    str_condition = "snail"
+    name = "snail"
+    HP = 10
+    MP = 10
+    AD = 5
+    
+    def att(self,player):
+        if self.MP == 10:
+            self.MP == 0
+            player.HP == 95
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 90
+            self.HP = 0
+
+while True:
+    menu = int(input())
+    if(menu <= 1):
+        if(menu == 1):
+            player.att(snail)
+
+    if(player.HP == 0):
+        print("으악!")
+        print("지고 말았어요. 공주는 결국 찾지 못하는 건가요?")
+        break
+  
+
+
+           
+
+
+
+
