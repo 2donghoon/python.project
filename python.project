@@ -3,14 +3,16 @@ print("당신은 구리구리제국의 공주와 3일 후 결혼을 하기로 �
 print("그러던 어느날")
 print("이를 질투한 동물 제국의 왕이 공주를 납치해가고 맙니다.")
 print("화가 난 당신은 동물 제국의 성에 들어가 공주를 구해오기로 결정합니다.")
-print("혼자서 말이죠.")
+print("제가 가이드를 해드릴게요.")
 print("아 그리고 들리는 바에 의하면 동물 제국은 총 10층탑으로 이루어져있으며 각 층마다 동물들이 그 층을 지키고 있다고 합니다.")
 print("부디 조심하시기 바랍니다.")
 
 class human:
     HP = 100
     MP = 100
-    def att(self,snail):
+    AD = 10
+
+    def att(self,enemy):
         if self.MP == 100:
             self.MP == 90
             enemy.HP = 0
@@ -34,6 +36,7 @@ print("안을 조용히 둘러보던 중, 이상한 소리가 들립니다.")
 print("스멀스멀")
 print("1층을 지키는 달팽이가 나타났습니다!")
 print("어서 해치우세요!")
+print("아 그리고 숫자 1을 누르면 공격을 할 수 있다고 해요!")
 
 class enemy:
     str_condition = "unknown"
@@ -55,22 +58,249 @@ class snail(enemy):
         if player.MP == 100:
             player.MP == 90
             self.HP = 0
+            print("스멀스멀")
+
 
 while True:
     menu = int(input())
-    if(menu <= 1):
+    if(menu <= 2):
         if(menu == 1):
-            player.att(snail)
+            player.att(enemy)
+           
+        if(menu == 2):
+            player.att(enemy)
 
     if(player.HP == 0):
         print("으악!")
         print("지고 말았어요. 공주는 결국 찾지 못하는 건가요?")
         break
   
+while True: 
+    if snail.HP == 10:
+        snail.HP == 0
+        print("이제 2층으로 올라가세요.")
+        print("2층에 도착했습니다.")
+        print("저 멀리서 반짝이는 원 같은 게 두 개 보인다.")
+        print("가까이 가서 살펴볼까")
+        print("...")
+        print("냐옹!!!!!")
+        print("2층을 지키는 고양이의 눈이었잖아?")
+        print("해치우자!")
+
+class cat(enemy):
+    str_condition = "cat"
+    name = "cat"
+    HP = 20
+    MP = 20
+    AD = 10
+
+    def att(self,player):
+        if self.MP == 20:
+            self.MP == 0
+            player.HP == 80
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 80
+            self.HP =  0
+            print("냐옹!")
+
+while True:
+    if cat.HP == 20:
+        cat.HP = 0
+        print("고양이까지 해치우셨군요!")
+        print("이제 빠르게 3층으로 가보도록 해요!")
+        print("계단을 올라가던 중 사나운 개가 짖는 소리가 들린다.")
+        print("이번엔 안 봐도 3층의 주인은 개가 되겠네요.")
+        print("이제부터는 꽤 힘들어질 테니 행운을 빕니다.")
+
+class dog(enemy):
+    str_condition = "dog"
+    name = "dog"
+    HP = 30
+    MP = 30
+    AD = 13
+
+    def att(self,player):
+        if self.MP == 30:
+            self.MP == 0
+            player.HP = 61
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 70
+            self.HP = 0
+            print("멍멍!")
 
 
-           
+while True:
+    if dog.HP == 30:
+        dog.HP = 0
+        print("휴 이번 스테이지는 꽤 쉽지 않았어요.")
+        print("확실히 3층부터는 강한 동물들이 나오네요.")
+        print("이제 4층으로 가보죠!")
+        print("...")
+        print("아야!")
+        print("괜찮으세요? 여기 누가 바나나 껍질을...")
+        print("멀리서 끽끽거리는 소리가 들린다.")
+        print("원숭이에요! 멀리서 바나나 껍질을 던지니 조심하세요!")
 
+class monkey(enemy):
+    str_condition = "monkey"
+    name = "monkey"
+    HP = 40
+    MP = 40
+    AD = 15
 
+    def att(self,player):
+         if self.MP == 40:
+             self.MP == 20
+             player.HP = 85
 
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 60
+            self.HP = 0
+            print("끽끽!")
 
+while True:
+    if monkey.HP == 40:
+        monkey.HP = 0
+        print("원숭이도 해치웠어요!")
+        print("벌써 5층이네요.")
+        print("이제부턴 정말 조심해야 해요.")
+        print("꽤 강한 동물들이 나올 거예요.")
+        print("그러니 스킬을 하나 더 알려줄게요. 이번엔 2번을 눌러보면 다른 공격스킬이 나갈 거예요.")
+        print("아 그리고 한 가지 팁을 드리자면 적이 모든 공격을 사용하기 전에 빨리 잡아야 해요!")
+
+class rhino(enemy):
+    str_condition = "rhino"
+    name = "rhino"
+    HP = 50
+    MP = 50
+    AD = 20
+
+    def att(self,player):
+         if self.MP == 50:
+             self.MP == 0
+             player.HP = 0
+
+    def att(player,self):
+        if player.MP == 50:
+            player.MP == 0
+            self.HP = 0
+            print("우워어")
+
+while True:
+    if rhino.HP == 50:
+        rhino.HP = 0
+        print("휴 다행이네요!")
+        print("꽤 강한 상대여서 혹시나 지는 건 아닌가 하고 걱정했어요.")
+        print("방금 보셨던 것처럼 이제 이전과는 비교도 안될정도로 강한 동물들이 나올 거예요.")
+        print("각오 단단히 하시고 그럼 6층으로 가시죠.")
+  
+
+class pig(enemy):
+    str_condition = "pig"
+    name = "pig"
+    HP = 60
+    MP = 60
+    AD = 25
+
+    def att(self,player):
+         if self.MP == 60:
+             self.MP == 20
+             player.HP = 0
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 40
+            self.HP = 0
+            print("꾸웨엑")
+
+while True:
+    if pig.HP == 60:
+        pig.HP = 0
+        print("괜찮으세요?")
+        print("이번엔 정말 위험했네요.")
+        print("이제 정말 거의 다 왔어요! 공주를 구할 수 있을 거예요!")
+
+class giraffe(enemy):
+    str_condition = "giraffe"
+    name = "giraffe"
+    HP = 70
+    MP = 70
+    AD = 30
+
+    def att(self,player):
+         if self.MP == 70:
+             self.MP == 40
+             player.HP = 0
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 30
+            self.HP = 0
+            print("푸르르")
+
+while True:
+    if giraffe.HP == 70:
+        giraffe.HP = 0
+        print("말로만 듣던 7층의 주인 기린을 실제로 보다니...")
+        print("정말 대단하시네요...")
+        print("...")
+        print("그럼 8층으로 가시죠.")
+
+class elephant(enemy):
+    str_condition = "elephant"
+    name = "elephant"
+    HP = 80
+    MP = 80
+    AD = 35
+
+    def att(self,player):
+         if self.MP == 80:
+             self.MP == 40
+             player.HP = 0
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 20
+            self.HP = 0
+            print("뿌우우")
+
+while True:
+    if elephant.HP == 80:
+        elephant.HP = 0
+        print("코끼리까지 해치우다니...")
+        print("정말 공주를 구할 수 있겠어요.")
+        print("9층은 누가 있을까요? 어서 가보죠.")
+
+class lion(enemy):
+    str_condition = "lion"
+    name = "lion"
+    HP = 90
+    MP = 90
+    AD = 40
+
+    def att(self,player):
+         if self.MP == 90:
+             self.MP == 60
+             player.HP = 0
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 10
+            self.HP = 0
+            print("어흥!")
+
+while True:
+    if lion.HP == 90:
+        lion.HP = 0
+        print("수고하셨어요.")
+        print("이제 동물제국의 왕이 있다는 마지막 10층이에요.")
+        print('준비 다 되셨으면 10층으로 가시죠.')
+        print("...")
+        print("행운을 빕니다.")
+
+class kingsnail
