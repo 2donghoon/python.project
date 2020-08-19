@@ -300,7 +300,32 @@ while True:
         print("수고하셨어요.")
         print("이제 동물제국의 왕이 있다는 마지막 10층이에요.")
         print('준비 다 되셨으면 10층으로 가시죠.')
-        print("...")
         print("행운을 빕니다.")
+        print("...")
+        print("어 저기 공주님이 있어요!")
+        print("공주님 괜찮으세요?")
+        print("용사님 뒤에!")
 
-class kingsnail
+class kingsnail(enemy):
+    str_condition = "kingsnail"
+    name = "kingsnail"
+    HP = 100
+    MP = 100
+    AD = 50
+
+    def att(self,player):
+         if self.MP == 100:
+             self.MP == 50
+             player.HP = 0
+
+    def att(player,self):
+        if player.MP == 100:
+            player.MP == 0
+            self.HP = 0
+            
+while True:
+    if kingsnail.HP == 100:
+        kingsnail.HP = 0
+        print("투둑")
+        print("용사님! 성이 무너지기 시작했어요!")
+        print("어서 빠져나가야 해요!")
