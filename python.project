@@ -11,6 +11,7 @@ class human:
     HP = 100
     MP = 100
     AD = 10
+    money = 0
 
     def att(self,enemy):
         if self.MP == 100:
@@ -78,6 +79,7 @@ while True:
 while True: 
     if snail.HP == 10:
         snail.HP == 0
+        player.money = 5
         print("이제 2층으로 올라가세요.")
         print("2층에 도착했습니다.")
         print("저 멀리서 반짝이는 원 같은 게 두 개 보인다.")
@@ -108,11 +110,14 @@ class cat(enemy):
 while True:
     if cat.HP == 20:
         cat.HP = 0
+        player.money = 10
+        player.AD = 15
         print("고양이까지 해치우셨군요!")
         print("이제 빠르게 3층으로 가보도록 해요!")
         print("계단을 올라가던 중 사나운 개가 짖는 소리가 들린다.")
         print("이번엔 안 봐도 3층의 주인은 개가 되겠네요.")
         print("이제부터는 꽤 힘들어질 테니 행운을 빕니다.")
+        print("아 그리고 제가 돈이 일정 수준으로 모일 때마다 자동으로 무기를 업그레이드해드릴게요.")
 
 class dog(enemy):
     str_condition = "dog"
@@ -128,7 +133,7 @@ class dog(enemy):
 
     def att(player,self):
         if player.MP == 100:
-            player.MP == 70
+            player.MP == 80
             self.HP = 0
             print("멍멍!")
 
@@ -136,6 +141,7 @@ class dog(enemy):
 while True:
     if dog.HP == 30:
         dog.HP = 0
+        player.money = 5
         print("휴 이번 스테이지는 꽤 쉽지 않았어요.")
         print("확실히 3층부터는 강한 동물들이 나오네요.")
         print("이제 4층으로 가보죠!")
@@ -159,13 +165,14 @@ class monkey(enemy):
 
     def att(player,self):
         if player.MP == 100:
-            player.MP == 60
+            player.MP == 70
             self.HP = 0
             print("끽끽!")
 
 while True:
     if monkey.HP == 40:
         monkey.HP = 0
+        player.money = 10
         print("원숭이도 해치웠어요!")
         print("벌써 5층이네요.")
         print("이제부턴 정말 조심해야 해요.")
@@ -186,14 +193,15 @@ class rhino(enemy):
              player.HP = 0
 
     def att(player,self):
-        if player.MP == 50:
-            player.MP == 0
+        if player.MP == 100:
+            player.MP == 60
             self.HP = 0
             print("우워어")
 
 while True:
     if rhino.HP == 50:
         rhino.HP = 0
+        player.money = 15
         print("휴 다행이네요!")
         print("꽤 강한 상대여서 혹시나 지는 건 아닌가 하고 걱정했어요.")
         print("방금 보셨던 것처럼 이제 이전과는 비교도 안될정도로 강한 동물들이 나올 거예요.")
@@ -214,15 +222,19 @@ class pig(enemy):
 
     def att(player,self):
         if player.MP == 100:
-            player.MP == 40
+            player.MP == 60
             self.HP = 0
             print("꾸웨엑")
 
 while True:
     if pig.HP == 60:
         pig.HP = 0
+        player.money = 25
+        player.AD = 18
         print("괜찮으세요?")
         print("이번엔 정말 위험했네요.")
+        print("아 그리고 자동으로 무기를 업그레이드해드렸어요.")
+        print("더 강한 무기를 쓰실 수 있을 거예요.")
         print("이제 정말 거의 다 왔어요! 공주를 구할 수 있을 거예요!")
 
 class giraffe(enemy):
@@ -239,17 +251,11 @@ class giraffe(enemy):
 
     def att(player,self):
         if player.MP == 100:
-            player.MP == 30
+            player.MP == 60
             self.HP = 0
             print("푸르르")
 
-while True:
-    if giraffe.HP == 70:
-        giraffe.HP = 0
-        print("말로만 듣던 7층의 주인 기린을 실제로 보다니...")
-        print("정말 대단하시네요...")
-        print("...")
-        print("그럼 8층으로 가시죠.")
+ 
 
 class elephant(enemy):
     str_condition = "elephant"
@@ -265,13 +271,14 @@ class elephant(enemy):
 
     def att(player,self):
         if player.MP == 100:
-            player.MP == 20
+            player.MP == 50
             self.HP = 0
             print("뿌우우")
 
 while True:
     if elephant.HP == 80:
         elephant.HP = 0
+        player.money = 10
         print("코끼리까지 해치우다니...")
         print("정말 공주를 구할 수 있겠어요.")
         print("9층은 누가 있을까요? 어서 가보죠.")
@@ -290,13 +297,14 @@ class lion(enemy):
 
     def att(player,self):
         if player.MP == 100:
-            player.MP == 10
+            player.MP == 40
             self.HP = 0
             print("어흥!")
 
 while True:
     if lion.HP == 90:
         lion.HP = 0
+        player.money = 50
         print("수고하셨어요.")
         print("이제 동물제국의 왕이 있다는 마지막 10층이에요.")
         print('준비 다 되셨으면 10층으로 가시죠.')
@@ -309,7 +317,7 @@ while True:
 class kingsnail(enemy):
     str_condition = "kingsnail"
     name = "kingsnail"
-    HP = 100
+    HP = 180
     MP = 100
     AD = 50
 
